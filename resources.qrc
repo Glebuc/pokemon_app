@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="Pokemon">
+    <file>static/pokeball-pokemon-svgrepo-com.svg</file>
+    <file>static/search-svgrepo-com.svg</file>
+  </qresource>
+</RCC>
