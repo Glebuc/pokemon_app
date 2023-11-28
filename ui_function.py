@@ -8,6 +8,7 @@ from PySide6.QtWidgets import QPushButton, QMessageBox
 class UIFunction(Ui_MainWindow):
     @Slot()
     def get_search_field(self):
+        self.ui
 
 
 
