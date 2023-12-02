@@ -3,6 +3,23 @@ from PySide6.QtSql import QSqlDatabase, QSqlQuery
 
 import sys
 
+INSERT_SQL = """INSERT INTO pokemon(name, weight, type) VALUES 
+(?, ?, ?);"""
+
+
+CREATE_TABLE_POKEMON = """CREATE TABLE IF NOT EXISTS pokemon (
+    id INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE NOT NULL,
+    name VARCHAR(150) NOT NULL,
+    weight INTEGER,
+    type VARCHAR(200)
+    );"""
+
+def add_row(q,name, weight, type):
+    q.addBindValue(name)
+    q.addBindValue(weight)
+    q.addBindValue(type)
+    q.exec()
+
 
 def init_db():
     """Это функция инициализирует Базу данных"""
@@ -15,12 +32,11 @@ def init_db():
     else:
         print("Соединение с базой данных успешно")
 
-    create_table_pokemon = QSqlQuery()
-    create_table_pokemon.exec("""
-    CREATE TABLE pokemon (
-    id INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE NOT NULL,
-    name VARCHAR(150) NOT NULL,
-    weight INTEGER,
-    type VARCHAR(200)
-    );
-    """)
+    q = QSqlQuery()
+    q.exec(CREATE_TABLE_POKEMON)
+    q.prepare(INSERT_SQL)
+    add_row(q, "Bulbasaur", 7, 'grass')
+    db.close()
+
+
+
