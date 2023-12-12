@@ -1,6 +1,6 @@
 
 from PySide6.QtSql import QSqlDatabase, QSqlQuery
-
+from pypokedex import get
 import sys
 
 INSERT_SQL = """INSERT INTO pokemon(name, weight, type) VALUES 
@@ -34,9 +34,23 @@ def init_db():
 
     q = QSqlQuery()
     q.exec(CREATE_TABLE_POKEMON)
-    q.prepare(INSERT_SQL)
-    add_row(q, "Bulbasaur", 7, 'grass')
     db.close()
+
+def fill_pokemon_data():
+    for i in range(100,152):
+        pokemon = get(dex=i)
+        print(pokemon.dex)
+        print(pokemon.name)
+        print(pokemon.types[0])
+        print("++++++++++++++")
+
+    # for pokemon_name in all_pokemon_names:
+    #     poke = get(pokemon_name)
+    #
+    #     add_row(q, poke.name, poke.weight, poke.types)
+    # db.close()
+
+fill_pokemon_data()
 
 
 

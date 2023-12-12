@@ -5,10 +5,14 @@ from PySide6.QtWidgets import QPushButton, QMessageBox
 
 
 
-class UIFunction(Ui_MainWindow):
+class UIFunction():
+    def __init__(self, ui_main_window_instance):
+        self.ui = ui_main_window_instance
+
     @Slot()
     def get_search_field(self):
-        self.ui
+        text_filed = self.ui.searchPokemon.text()
+        print(text_filed)
 
 
 
