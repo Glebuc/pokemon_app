@@ -35,6 +35,9 @@ font-size: 20px;
 border-radius: 10px;
 color: white;
 font-weight: bold;
+}
+#btnViewPokemon{
+
 }</string>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -52,6 +55,9 @@ font-weight: bold;
     </property>
     <item>
      <widget class="QTabWidget" name="tabWidget">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
       <property name="currentIndex">
        <number>0</number>
       </property>
@@ -69,13 +75,6 @@ font-weight: bold;
            <enum>QFrame::Raised</enum>
           </property>
           <layout class="QHBoxLayout" name="horizontalLayout_4">
-           <item>
-            <widget class="QPushButton" name="btnViewPokemon">
-             <property name="text">
-              <string>Найти</string>
-             </property>
-            </widget>
-           </item>
            <item>
             <widget class="QComboBox" name="comboBox">
              <item>
@@ -110,6 +109,16 @@ font-weight: bold;
              </item>
             </widget>
            </item>
+           <item>
+            <widget class="QPushButton" name="btnViewPokemon">
+             <property name="styleSheet">
+              <string notr="true">width:30%</string>
+             </property>
+             <property name="text">
+              <string>Найти</string>
+             </property>
+            </widget>
+           </item>
           </layout>
          </widget>
         </item>
@@ -136,7 +145,7 @@ font-weight: bold;
            </size>
           </property>
           <property name="styleSheet">
-           <string notr="true">#frame {
+           <string notr="true">#frameSearchPokemon {
 background-color: #454641;
 }
 #label {

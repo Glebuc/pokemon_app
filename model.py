@@ -14,6 +14,8 @@ CREATE_TABLE_POKEMON = """CREATE TABLE IF NOT EXISTS pokemon (
     type VARCHAR(200)
     );"""
 
+SELECT_ALL_POKEMON =  "SELECT * FROM pokemon"
+
 def add_row(q,name, weight, type):
     q.addBindValue(name)
     q.addBindValue(weight)
@@ -21,36 +23,47 @@ def add_row(q,name, weight, type):
     q.exec()
 
 
+
+def db_connection(function_query):
+    def wrapper():
+        db = QSqlDatabase.addDatabase("QSQLITE")
+        db.setDatabaseName("pokemon_db.sqlite")
+        db.open()
+        if not db.open():
+            print("Нет соединения с базой данных. ОШИБКА")
+            sys.exit(1)
+        else:
+            print("Соединение с базой данных успешно")
+
+        result = function_query()  # Запуск функции и сохранение результата
+        return result
+    return wrapper
+
+@db_connection
 def init_db():
     """Это функция инициализирует Базу данных"""
-    db = QSqlDatabase.addDatabase("QSQLITE")
-    db.setDatabaseName("pokemon_db.sqlite")
-    db.open()
-    if not db.open():
-        print("Нет соединения с базой данных. ОШИБКА")
-        sys.exit(1)
-    else:
-        print("Соединение с базой данных успешно")
-
     q = QSqlQuery()
     q.exec(CREATE_TABLE_POKEMON)
-    db.close()
 
+@db_connection
 def fill_pokemon_data():
-    for i in range(100,152):
-        pokemon = get(dex=i)
-        print(pokemon.dex)
-        print(pokemon.name)
-        print(pokemon.types[0])
-        print("++++++++++++++")
+    q = QSqlQuery()
+    q.prepare(INSERT_SQL)
+    for i in range(1,1200):
+        try:
+            pokemon = get(dex=i)
+            add_row(q, pokemon.name, pokemon.weight, pokemon.types[0] )
+        except:
+            continue
+@db_connection
+def get_all_pokemon():
+    q = QSqlQuery()
+    q.exec_(SELECT_ALL_POKEMON)
+    # q.next()
+    return q
 
-    # for pokemon_name in all_pokemon_names:
-    #     poke = get(pokemon_name)
-    #
-    #     add_row(q, poke.name, poke.weight, poke.types)
-    # db.close()
 
-fill_pokemon_data()
+
 
 
 
