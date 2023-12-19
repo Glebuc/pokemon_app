@@ -48,12 +48,16 @@ class Ui_MainWindow(object):
 "border-radius: 10px;\n"
 "color: white;\n"
 "font-weight: bold;\n"
+"}\n"
+"#btnViewPokemon{\n"
+"\n"
 "}")
         self.horizontalLayout_2 = QHBoxLayout(self.centralwidget)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.tabWidget = QTabWidget(self.centralwidget)
         self.tabWidget.setObjectName(u"tabWidget")
+        self.tabWidget.setStyleSheet(u"")
         self.tab = QWidget()
         self.tab.setObjectName(u"tab")
         self.verticalLayout_4 = QVBoxLayout(self.tab)
@@ -64,11 +68,6 @@ class Ui_MainWindow(object):
         self.frame.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_4 = QHBoxLayout(self.frame)
         self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
-        self.btnViewPokemon = QPushButton(self.frame)
-        self.btnViewPokemon.setObjectName(u"btnViewPokemon")
-
-        self.horizontalLayout_4.addWidget(self.btnViewPokemon)
-
         self.comboBox = QComboBox(self.frame)
         self.comboBox.addItem("")
         self.comboBox.addItem("")
@@ -79,6 +78,12 @@ class Ui_MainWindow(object):
         self.comboBox.setObjectName(u"comboBox")
 
         self.horizontalLayout_4.addWidget(self.comboBox)
+
+        self.btnViewPokemon = QPushButton(self.frame)
+        self.btnViewPokemon.setObjectName(u"btnViewPokemon")
+        self.btnViewPokemon.setStyleSheet(u"width:30%")
+
+        self.horizontalLayout_4.addWidget(self.btnViewPokemon)
 
 
         self.verticalLayout_4.addWidget(self.frame)
@@ -97,7 +102,7 @@ class Ui_MainWindow(object):
         self.frameSearchPokemon = QFrame(self.tab_2)
         self.frameSearchPokemon.setObjectName(u"frameSearchPokemon")
         self.frameSearchPokemon.setMaximumSize(QSize(300, 16777215))
-        self.frameSearchPokemon.setStyleSheet(u"#frame {\n"
+        self.frameSearchPokemon.setStyleSheet(u"#frameSearchPokemon {\n"
 "background-color: #454641;\n"
 "}\n"
 "#label {\n"
@@ -207,7 +212,6 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.btnViewPokemon.setText(QCoreApplication.translate("MainWindow", u"\u041d\u0430\u0439\u0442\u0438", None))
         self.comboBox.setItemText(0, QCoreApplication.translate("MainWindow", u"\u041d\u043e\u0432\u044b\u0439 \u044d\u043b\u0435\u043c\u0435\u043d\u0442", None))
         self.comboBox.setItemText(1, QCoreApplication.translate("MainWindow", u"\u041d\u043e\u0432\u044b\u0439 \u044d\u043b\u0435\u043c\u0435\u043d\u0442", None))
         self.comboBox.setItemText(2, QCoreApplication.translate("MainWindow", u"\u041d\u043e\u0432\u044b\u0439 \u044d\u043b\u0435\u043c\u0435\u043d\u0442", None))
@@ -215,6 +219,7 @@ class Ui_MainWindow(object):
         self.comboBox.setItemText(4, QCoreApplication.translate("MainWindow", u"\u041d\u043e\u0432\u044b\u0439 \u044d\u043b\u0435\u043c\u0435\u043d\u0442", None))
         self.comboBox.setItemText(5, QCoreApplication.translate("MainWindow", u"\u041d\u043e\u0432\u044b\u0439 \u044d\u043b\u0435\u043c\u0435\u043d\u0442", None))
 
+        self.btnViewPokemon.setText(QCoreApplication.translate("MainWindow", u"\u041d\u0430\u0439\u0442\u0438", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), QCoreApplication.translate("MainWindow", u"\u0421\u043f\u0438\u0441\u043e\u043a \u0432\u0441\u0435\u0445 \u043f\u043e\u043a\u0435\u043c\u043e\u043d\u043e\u0432", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"POKEDEX", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0438\u043c\u044f \u043f\u043e\u043a\u0435\u043c\u043e\u043d\u0430 \u0438\u043b\u0438 ID", None))

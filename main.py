@@ -1,5 +1,5 @@
 import sys
-from PySide6.QtWidgets import QApplication, QMainWindow
+from PySide6.QtWidgets import QApplication, QMainWindow, QHeaderView
 from ui_mainwindow import Ui_MainWindow
 import pypokedex
 import model
@@ -23,6 +23,7 @@ class MainWindow(QMainWindow):
         table_model.setQuery(query)  # Получение данных из модели
         table_view = self.ui.tablePokemon
         table_view.setModel(table_model)
+        table_view.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
 
 
 
