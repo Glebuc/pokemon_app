@@ -64,33 +64,30 @@ class Ui_MainWindow(object):
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.frame = QFrame(self.tab)
         self.frame.setObjectName(u"frame")
+        self.frame.setStyleSheet(u"background-color: #454641;")
         self.frame.setFrameShape(QFrame.StyledPanel)
         self.frame.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_4 = QHBoxLayout(self.frame)
-        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
+        self.verticalLayout_5 = QVBoxLayout(self.frame)
+        self.verticalLayout_5.setObjectName(u"verticalLayout_5")
+        self.label_4 = QLabel(self.frame)
+        self.label_4.setObjectName(u"label_4")
+        self.label_4.setStyleSheet(u"color:white;\n"
+"text-weight: bold;")
+
+        self.verticalLayout_5.addWidget(self.label_4)
+
         self.comboBox = QComboBox(self.frame)
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
         self.comboBox.setObjectName(u"comboBox")
+        self.comboBox.setStyleSheet(u"background-color: rgb(255, 255, 255);")
 
-        self.horizontalLayout_4.addWidget(self.comboBox)
-
-        self.btnViewPokemon = QPushButton(self.frame)
-        self.btnViewPokemon.setObjectName(u"btnViewPokemon")
-        self.btnViewPokemon.setStyleSheet(u"width:30%")
-
-        self.horizontalLayout_4.addWidget(self.btnViewPokemon)
+        self.verticalLayout_5.addWidget(self.comboBox)
 
 
         self.verticalLayout_4.addWidget(self.frame)
 
         self.tablePokemon = QTableView(self.tab)
         self.tablePokemon.setObjectName(u"tablePokemon")
-        self.tablePokemon.setStyleSheet(u"background-color: rgb(255, 56, 21);")
+        self.tablePokemon.setStyleSheet(u"")
 
         self.verticalLayout_4.addWidget(self.tablePokemon)
 
@@ -212,14 +209,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.comboBox.setItemText(0, QCoreApplication.translate("MainWindow", u"\u041d\u043e\u0432\u044b\u0439 \u044d\u043b\u0435\u043c\u0435\u043d\u0442", None))
-        self.comboBox.setItemText(1, QCoreApplication.translate("MainWindow", u"\u041d\u043e\u0432\u044b\u0439 \u044d\u043b\u0435\u043c\u0435\u043d\u0442", None))
-        self.comboBox.setItemText(2, QCoreApplication.translate("MainWindow", u"\u041d\u043e\u0432\u044b\u0439 \u044d\u043b\u0435\u043c\u0435\u043d\u0442", None))
-        self.comboBox.setItemText(3, QCoreApplication.translate("MainWindow", u"\u041d\u043e\u0432\u044b\u0439 \u044d\u043b\u0435\u043c\u0435\u043d\u0442", None))
-        self.comboBox.setItemText(4, QCoreApplication.translate("MainWindow", u"\u041d\u043e\u0432\u044b\u0439 \u044d\u043b\u0435\u043c\u0435\u043d\u0442", None))
-        self.comboBox.setItemText(5, QCoreApplication.translate("MainWindow", u"\u041d\u043e\u0432\u044b\u0439 \u044d\u043b\u0435\u043c\u0435\u043d\u0442", None))
-
-        self.btnViewPokemon.setText(QCoreApplication.translate("MainWindow", u"\u041d\u0430\u0439\u0442\u0438", None))
+        self.label_4.setText(QCoreApplication.translate("MainWindow", u"\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0442\u0438\u043f \u043f\u043e\u043a\u0435\u043c\u043e\u043d\u0430", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), QCoreApplication.translate("MainWindow", u"\u0421\u043f\u0438\u0441\u043e\u043a \u0432\u0441\u0435\u0445 \u043f\u043e\u043a\u0435\u043c\u043e\u043d\u043e\u0432", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"POKEDEX", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0438\u043c\u044f \u043f\u043e\u043a\u0435\u043c\u043e\u043d\u0430 \u0438\u043b\u0438 ID", None))

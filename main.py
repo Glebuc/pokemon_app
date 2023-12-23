@@ -3,6 +3,7 @@ from PySide6.QtWidgets import QApplication, QMainWindow, QHeaderView
 from ui_mainwindow import Ui_MainWindow
 import pypokedex
 import model
+from PySide6.QtCore import Qt, Slot, QModelIndex
 from PySide6.QtSql import QSqlRelation, QSqlRelationalTableModel, QSqlTableModel, QSqlQuery, QSqlQueryModel
 from ui_function import UIFunction
 
@@ -23,7 +24,11 @@ class MainWindow(QMainWindow):
         table_model.setQuery(query)  # Получение данных из модели
         table_view = self.ui.tablePokemon
         table_view.setModel(table_model)
+        query_combo_box = model.get_all_types_pokemon()
+        combo_box = self.ui.comboBox
         table_view.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+        table_view.setColumnHidden(0, True)
+        # self.ui.tablePokemon.setColumnHidden(table_model.QModelIndex('id'), True)
 
 
 

@@ -1,5 +1,6 @@
 
-from PySide6.QtSql import QSqlDatabase, QSqlQuery
+from PySide6.QtSql import QSqlDatabase, QSqlQuery, QSqlTableModel
+from PySide6.QtCore import QAbstractItemModel
 from pypokedex import get
 import sys
 
@@ -13,6 +14,11 @@ CREATE_TABLE_POKEMON = """CREATE TABLE IF NOT EXISTS pokemon (
     weight INTEGER,
     type VARCHAR(200)
     );"""
+
+
+GET_ALL_TYPES = """
+SELECT type FROM pokemon GROUP BY type;
+"""
 
 SELECT_ALL_POKEMON =  "SELECT * FROM pokemon"
 
@@ -61,6 +67,19 @@ def get_all_pokemon():
     q.exec_(SELECT_ALL_POKEMON)
     # q.next()
     return q
+
+@db_connection
+def get_all_types_pokemon() :
+    q = QSqlQuery()
+    q.exec(GET_ALL_TYPES)
+    data = []
+    while q.next():
+        item1 = q.value(0)
+        data.append((item1))
+
+    for item in data:
+        print(item)
+    return data
 
 
 
