@@ -182,11 +182,6 @@ class Ui_MainWindow(object):
         self.horizontalLayout = QHBoxLayout()
         self.horizontalLayout.setSpacing(15)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.label_2 = QLabel(self.frameViewPokemon)
-        self.label_2.setObjectName(u"label_2")
-
-        self.horizontalLayout.addWidget(self.label_2)
-
 
         self.verticalLayout_3.addLayout(self.horizontalLayout)
 
@@ -201,7 +196,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.tabWidget.setCurrentIndex(0)
+        self.tabWidget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -215,7 +210,6 @@ class Ui_MainWindow(object):
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0438\u043c\u044f \u043f\u043e\u043a\u0435\u043c\u043e\u043d\u0430 \u0438\u043b\u0438 ID", None))
         self.searchPokemon.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Pikachu", None))
         self.btnSearchPokemon.setText(QCoreApplication.translate("MainWindow", u"\u041d\u0430\u0439\u0442\u0438..", None))
-        self.label_2.setText(QCoreApplication.translate("MainWindow", u"\u0417\u0414\u0415\u0421\u042c \u041f\u041e\u041a\u0410 \u041d\u0418\u0427\u0415\u0413\u041e \u041d\u0415\u0422....", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), QCoreApplication.translate("MainWindow", u"\u041f\u043e\u0438\u0441\u043a \u043f\u043e\u043a\u0435\u043c\u043e\u043d\u0430", None))
     # retranslateUi
 

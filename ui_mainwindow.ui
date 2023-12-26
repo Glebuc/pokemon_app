@@ -59,7 +59,7 @@ font-weight: bold;
        <string notr="true"/>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -277,13 +277,6 @@ background-color: #eee;</string>
              <property name="spacing">
               <number>15</number>
              </property>
-             <item>
-              <widget class="QLabel" name="label_2">
-               <property name="text">
-                <string>ЗДЕСЬ ПОКА НИЧЕГО НЕТ....</string>
-               </property>
-              </widget>
-             </item>
             </layout>
            </item>
           </layout>

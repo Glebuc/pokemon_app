@@ -18,7 +18,7 @@ class MainWindow(QMainWindow):
         ui_function_instance = UIFunction(self.ui)
         model.init_db()
         # model.fill_pokemon_data()
-        self.ui.btnSearchPokemon.clicked.connect(lambda: ui_function_instance.get_search_field())
+        # self.ui.btnSearchPokemon.clicked.connect(lambda: ui_function_instance.get_search_field())
         table_model = QSqlQueryModel()
         query = model.get_all_pokemon()
         table_model.setQuery(query)  # Получение данных из модели
@@ -28,6 +28,9 @@ class MainWindow(QMainWindow):
         combo_box = self.ui.comboBox
         table_view.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
         table_view.setColumnHidden(0, True)
+        self.ui.btnSearchPokemon.clicked.connect(lambda: ui_function_instance.check_pokemon())
+        frame_view_pokemon = self.ui.frameViewPokemon
+        # pokemon_info_controller = PokemonInfoController(frame_view_pokemon)
         # self.ui.tablePokemon.setColumnHidden(table_model.QModelIndex('id'), True)
 
 
