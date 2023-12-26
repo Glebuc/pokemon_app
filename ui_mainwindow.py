@@ -15,10 +15,10 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QComboBox, QFrame, QHBoxLayout,
-    QHeaderView, QLabel, QLineEdit, QMainWindow,
-    QPushButton, QSizePolicy, QSpacerItem, QTabWidget,
-    QTableView, QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QHeaderView,
+    QLabel, QLineEdit, QMainWindow, QPushButton,
+    QSizePolicy, QSpacerItem, QTabWidget, QTableView,
+    QVBoxLayout, QWidget)
 import resources
 
 class Ui_MainWindow(object):
@@ -62,29 +62,6 @@ class Ui_MainWindow(object):
         self.tab.setObjectName(u"tab")
         self.verticalLayout_4 = QVBoxLayout(self.tab)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
-        self.frame = QFrame(self.tab)
-        self.frame.setObjectName(u"frame")
-        self.frame.setStyleSheet(u"background-color: #454641;")
-        self.frame.setFrameShape(QFrame.StyledPanel)
-        self.frame.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_5 = QVBoxLayout(self.frame)
-        self.verticalLayout_5.setObjectName(u"verticalLayout_5")
-        self.label_4 = QLabel(self.frame)
-        self.label_4.setObjectName(u"label_4")
-        self.label_4.setStyleSheet(u"color:white;\n"
-"text-weight: bold;")
-
-        self.verticalLayout_5.addWidget(self.label_4)
-
-        self.comboBox = QComboBox(self.frame)
-        self.comboBox.setObjectName(u"comboBox")
-        self.comboBox.setStyleSheet(u"background-color: rgb(255, 255, 255);")
-
-        self.verticalLayout_5.addWidget(self.comboBox)
-
-
-        self.verticalLayout_4.addWidget(self.frame)
-
         self.tablePokemon = QTableView(self.tab)
         self.tablePokemon.setObjectName(u"tablePokemon")
         self.tablePokemon.setStyleSheet(u"")
@@ -204,7 +181,6 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.label_4.setText(QCoreApplication.translate("MainWindow", u"\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0442\u0438\u043f \u043f\u043e\u043a\u0435\u043c\u043e\u043d\u0430", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), QCoreApplication.translate("MainWindow", u"\u0421\u043f\u0438\u0441\u043e\u043a \u0432\u0441\u0435\u0445 \u043f\u043e\u043a\u0435\u043c\u043e\u043d\u043e\u0432", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"POKEDEX", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0438\u043c\u044f \u043f\u043e\u043a\u0435\u043c\u043e\u043d\u0430 \u0438\u043b\u0438 ID", None))
